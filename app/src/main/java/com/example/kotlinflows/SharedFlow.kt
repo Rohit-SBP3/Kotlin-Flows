@@ -14,6 +14,25 @@ class SharedFlow{
     // Shared Flow are Hot Stream (2nd consumer will not get from starting of stream)
     // replay buffer the last values.
 
+    /*
+      SharedFlow in Kotlin = a hot stream that broadcasts values to
+      multiple collectors at the same time.
+
+      🔥 What is SharedFlow?
+         A part of Kotlin Coroutines Flow
+         Used to emit values to multiple observers
+         Works like a live event bus
+
+         👉 If 3 collectors are listening → all 3 get the same data according to time of joining
+
+       ⚡ Key characteristics
+         ✅ Hot flow → starts emitting even if no one is collecting
+         ✅ Multiple collectors supported
+         ❌ Does NOT hold state by default
+         ❌ New collectors don’t get old values (unless configured)
+
+      */
+
     fun consumeSharedFlow(){
         val job = mutableSharedFlowProducer()
         GlobalScope.launch {

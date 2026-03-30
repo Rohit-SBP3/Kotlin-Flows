@@ -16,6 +16,7 @@ import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.kotlinflows.ui.theme.KotlinFlowsTheme
 import kotlinx.coroutines.Dispatchers
+import com.example.kotlinflows.StateFlow
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
@@ -74,8 +75,11 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val fl = FlowEX()
-        fl.consumeFlow()
+        /*val fl = FlowEX()
+        fl.consumeFlow()*/
+
+        val sf = StateFlow()
+        sf.stateFlowConsumer()
 
         /*producer()
         consumer()*/
